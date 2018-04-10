@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from diet.views import StartPageView
+from diet.views import StartPageView, UserLoginView, UserLogoutView, NewUserView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^$', StartPageView.as_view(), name='main')
+    url(r'^$', StartPageView.as_view(), name='main'),
+    url(r'^login$', UserLoginView.as_view(), name='login'),
+    url(r'^logout$', UserLogoutView.as_view(), name='logout'),
+    url(r'^add_user$', NewUserView.as_view(), name='register'),
 ]
