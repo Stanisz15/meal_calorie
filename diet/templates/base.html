@@ -13,7 +13,7 @@
         <a class="nav-link" href="#">Single meal</a>
         <a class="nav-link" href="#">1 day meals</a>
         <a class="nav-link" href="#">week diet</a>
-        <a class="nav-link" href="#">products</a>
+        <a class="nav-link" href="{% url 'products' %}">products</a>
         <form class="form-inline">
             {% if request.user.is_authenticated %}
             <a class="navbar-text mr-sm-2" style="color: #FFA500">Hi {{ request.user.username }}</a>

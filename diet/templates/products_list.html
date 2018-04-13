@@ -1,0 +1,23 @@
+
+
+{% block content %}
+<h2>Products list:</h2>
+<h3>Search for product:</h3>
+    <form action="" method="GET">
+        <label>
+            Product name:
+            <input type="text" name="name" value="{{ filters.name }}">
+        </label>
+        <label>
+            <input type="submit" value="Search">
+        </label>
+    </form>
+<p><a href="{% url 'add-product' %}">Add product!</a></p>
+<ol>
+    {% for product in products %}
+    <li><a href='/product/{{ product.id }}'>{{ product.name }}</a>--->
+    <a href="/update_product/{{ product.id}}">modify</a></li>
+    {% endfor %}
+</ol>
+<p><a href="{% url 'main' %}">main page</a></p>
+{% endblock %}

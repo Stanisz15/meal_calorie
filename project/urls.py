@@ -16,7 +16,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import url
-from diet.views import StartPageView, UserLoginView, UserLogoutView, NewUserView
+from diet.views import StartPageView, UserLoginView, UserLogoutView, NewUserView, AddProductView, UpdateProductView, \
+    ProductsView, ProductView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +25,8 @@ urlpatterns = [
     url(r'^login$', UserLoginView.as_view(), name='login'),
     url(r'^logout$', UserLogoutView.as_view(), name='logout'),
     url(r'^add_user$', NewUserView.as_view(), name='register'),
+    url(r'^add_product$', AddProductView.as_view(), name='add-product'),
+    url(r'^update_product/(?P<pk>\d+)/$', UpdateProductView.as_view(), name='update-product'),
+    url(r'^products', ProductsView.as_view(), name="products"),
+    url(r'^product/(?P<product_id>(\d)+)', ProductView.as_view(), name='product'),
 ]

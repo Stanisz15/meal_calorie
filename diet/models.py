@@ -7,7 +7,6 @@ class Product(models.Model):
     calories = models.DecimalField(decimal_places=2, max_digits=8)
     image = models.ImageField(blank=True, null=True)
     price = models.DecimalField(decimal_places=2, max_digits=6)
-    available = models.BooleanField(default=True)
 
 
 class Categories(models.Model):
